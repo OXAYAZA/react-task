@@ -1,12 +1,15 @@
 import React from 'react';
+import Slider from './components/slider/slider';
+import Intro from './components/intro/intro';
+import Search from './components/search/search';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Edit <code>src/App.js</code> and save to reload.</p>
-      </header>
-    </div>
+    <main className="app">
+      <Slider/>
+      <Intro/>
+      <Search/>
+    </main>
   );
 }
 

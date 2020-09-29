@@ -123,3 +123,26 @@ Mockup is here
 https://www.figma.com/file/gbRShTWT5QVr0vJxfv75ML/Test---1?node-id=1%3A2
 
 Good luck!
+
+
+## Styles
+
+Fonts
+- Montserrat bold (700) 24/1.2 - slider year
+- Montserrat bold (700) 48/120% 10% - slider heading
+- Montserrat medium (500) 24/1.2 - slider navigation
+- Montserrat bold (700) 64/1.2 - intro
+- Montserrat medium (500) 18/1.2 - search input
+- Montserrat medium (500) 36/1.2 - item heading
+- Montserrat medium (500) 18/1.2 - item info
+- Montserrat medium (500) 18/1.2 - pagination "items per page"
+- Montserrat bold (700) 18/1.2 - pagination
+- Montserrat regular (400) 18/1.2 - pagination "total"
+
+- Montserrat medium (500) 24/1.2 - back button
+- Montserrat bold (700) 48/1.2 - movie heading
+- Montserrat bold (700) 36/1.2 - movie rating
+- Montserrat bold (700) 48/1.2 - movie rating
+- Montserrat regular (400) 24/1.2 - movie info
+- Montserrat bold (700) 24/1.2 - movie info
+- Montserrat medium (500) 18/150% - movie description

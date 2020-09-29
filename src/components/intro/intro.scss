@@ -1,0 +1,31 @@
+.intro {
+	padding: 5vh 0 0;
+}
+
+.intro-title {
+	font-size: 30px;
+	font-weight: 700;
+}
+
+@media ( min-width: 425px ) {
+	.intro-title {
+		font-size: 45px;
+	}
+}
+
+@media ( min-width: 1024px ) {
+	.intro {
+		position: relative;
+		z-index: 1;
+		margin-top: -47px;
+		padding: 0;
+	}
+
+	.intro-title {
+		font-size: 64px;
+	}
+}
+
+@media ( min-width: 1350px ) {
+
+}

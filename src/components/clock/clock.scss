@@ -1,0 +1,14 @@
+.clock {
+	font-weight: bold;
+	user-select: none;
+	transition: color .25s;
+
+	&:hover {
+		cursor: pointer;
+		color: blue;
+	}
+}
+
+.clock-active {
+	color: red;
+}

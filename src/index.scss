@@ -1,0 +1,20 @@
+@import url( 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap' );
+@import url( 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Montserrat';
+	background: #202020;
+	color: white;
+	// TODO
+	overflow-x: hidden;
+}
+
+[class*='fa-'] {
+	font-family: 'FontAwesome';
+}

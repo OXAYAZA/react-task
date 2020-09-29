@@ -1,0 +1,13 @@
+.result-list {
+	list-style: none;
+}
+
+* + .result-list {
+	margin-top: 50px;
+}
+
+@media (min-width: 1024px) {
+	* + .result-list {
+		margin-top: 110px;
+	}
+}
