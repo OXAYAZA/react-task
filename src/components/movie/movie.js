@@ -2,7 +2,6 @@ import React from 'react';
 import './movie.scss';
 
 function Movie ( props ) {
-	console.log( props );
 	return (
 		<div className='movie'>
 			{ props.poster &&

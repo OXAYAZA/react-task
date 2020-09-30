@@ -73,20 +73,20 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 The Movie Application should contain the below features:
 
-- Movies Search
-	- List movies coming from search result - Title, Year, Type, Poster
-	- Clicking on a particular movie will redirect you to the selected movie detail page
+- [ ] Movies Search
+	- [X] List movies coming from search result - Title, Year, Type, Poster
+	- [ ] Clicking on a particular movie will redirect you to the selected movie detail page
 
-- Movie detail
-	- Show selected movie detail information - Title, Year, Type, Poster, Plot, IMDB rating, Runtime, Genre
-	- For video you can choose any trailer that you want 
-	- Navigate back to the movie list. Previous search & results should be still visible
-- Movie Pagination
-	- pagination should show movies per page, and total movie results
+- [ ] Movie detail
+	- [ ] Show selected movie detail information - Title, Year, Type, Poster, Plot, IMDB rating, Runtime, Genre
+	- [ ] For video you can choose any trailer that you want 
+	- [ ] Navigate back to the movie list. Previous search & results should be still visible
+- [X] Movie Pagination
+	- [X] pagination should show movies per page, and total movie results
 
-Pages should have proper urls and navigation should work as expected:
-	- using the back and forward button of the browser should take to the correct page
-	- reloading the current page should keep your search results
+- [ ] Pages should have proper urls and navigation should work as expected:
+	- [ ] using the back and forward button of the browser should take to the correct page
+	- [ ] reloading the current page should keep your search results
 
 Technologies required
 	- [React](https://reactjs.org/)
@@ -97,26 +97,24 @@ You may use any 3rd party libraries which can facilitate your development.
 Optional: Extra Credit
 	- Clean code
 	- Unit tests
-	- Responsive, polished design
+	- [ ] Responsive, polished design
 	- Animations
 	- Apply state management to your application. You may use any 3rd party libraries which can facilitate your development. Redux or similar
-	- Implement live search 
+	- [ ] Implement live search 
 	- Implement infinite scroll with pagination(for example https://codepen.io/timseverien/pen/XXYaZe/)
 
 If you get the demo in good shape and have extra time, add your own flair and features.
 
 Content
-
 	- Content should be fetched from - http://www.omdbapi.com/ You can use `8b47da7b` API key or create your own if necessary here: http://www.omdbapi.com/apikey.aspx
 	- Example API call - http://www.omdbapi.com/?apikey=8b47da7b&s=Batman
 
 Deliverable
-
-	- Provide a working application
-	- Provide source code in a public Git, Stash or Bitbucket repository
-	- Provide markdown readme file
-		- General information about the app
-		- Provide steps how to build/launch your application
+	- [ ] Provide a working application
+	- [ ] Provide source code in a public Git, Stash or Bitbucket repository
+	- [ ] Provide markdown readme file
+		- [ ] General information about the app
+		- [ ] Provide steps how to build/launch your application
 
 Mockup is here
 

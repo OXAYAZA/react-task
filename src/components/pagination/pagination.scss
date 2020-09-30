@@ -1,16 +1,51 @@
 .pagination {
 	display: flex;
 	align-items: center;
-	margin-left: auto;
-	max-width: 763px;
+	justify-content: center;
+	flex-direction: column;
+
+	> * + * {
+		margin-top: 20px;
+	}
+}
+
+* + .pagination {
+	margin-top: 65px;
+}
+
+.pagination-ipp {
+	font-weight: 500;
+}
+
+.pagination-arrows {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-grow: 1;
+	max-width: 358px;
 
 	> * + * {
 		margin-left: 20px;
 	}
 }
 
-* + .pagination {
-	margin-top: 65px;
+.pagination-left,
+.pagination-right {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	> * + * {
+		margin-left: 10px;
+	}
+}
+
+.pagination-items {
+	font-weight: 700;
+}
+
+.pagination-quantity {
+	font-weight: 400;
 }
 
 .pagination-button {
@@ -33,4 +68,30 @@
 
 .pagination-next {
 	background-image: url('data:image/svg+xml;utf8, <svg width="68" height="24" viewBox="0 0 68 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="white" d="M67.0607 13.0607C67.6464 12.4749 67.6464 11.5251 67.0607 10.9394L57.5147 1.39341C56.9289 0.807621 55.9792 0.807621 55.3934 1.39341C54.8076 1.97919 54.8076 2.92894 55.3934 3.51473L63.8787 12L55.3934 20.4853C54.8076 21.0711 54.8076 22.0208 55.3934 22.6066C55.9792 23.1924 56.9289 23.1924 57.5147 22.6066L67.0607 13.0607ZM-2.62268e-07 13.5L66 13.5L66 10.5L2.62268e-07 10.5L-2.62268e-07 13.5Z"/></svg>');
+}
+
+@media (min-width: 768px) {
+	.pagination {
+		flex-direction: row;
+		justify-content: space-between;
+
+		> * + * {
+			margin-top: 0;
+			margin-left: 20px;
+		}
+	}
+
+	.pagination-left,
+	.pagination-right {
+		> * + * {
+			margin-left: 20px;
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	.pagination {
+		margin-left: auto;
+		max-width: 763px;
+	}
 }

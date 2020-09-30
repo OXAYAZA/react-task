@@ -10,11 +10,35 @@ class Search extends React.Component {
 		this.state = {
 			value: '',
 			busy: false,
-			data: null
+			data: null,
+			items: null,
+			page: 1
 		};
 
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
+		this.request = this.request.bind( this );
+		this.handleChange = this.handleChange.bind( this );
+		this.handleSubmit = this.handleSubmit.bind( this );
+		this.pagePrev = this.pagePrev.bind( this );
+		this.pageNext = this.pageNext.bind( this );
+	}
+
+	request ( page, value ) {
+		if ( !this.state.busy ) {
+			this.setState({ busy: true });
+
+			fetch( 'https://www.omdbapi.com/?apikey=8b47da7b&page='+ page +'&s='+ value )
+			.then( res => res.json() )
+			.then( data => {
+				this.setState({
+					busy: false,
+					data: data,
+					response: data.Response,
+					items: data.totalResults ? Number( data.totalResults ) : null,
+					pages: data.totalResults ? Math.ceil( data.totalResults / 10 ) : null,
+					page: data.totalResults ? page : 1
+				});
+			});
+		}
 	}
 
 	handleChange( event ) {
@@ -23,19 +47,24 @@ class Search extends React.Component {
 
 	handleSubmit( event ) {
 		event.preventDefault();
+		this.request( 1, this.state.value );
+	}
 
-		if ( !this.state.busy ) {
-			this.setState({ busy: true });
+	pagePrev( event ) {
+		console.log( 'Prev' );
+		event.preventDefault();
 
-			fetch( 'http://www.omdbapi.com/?apikey=8b47da7b&s='+ this.state.value )
-				.then( res => res.json() )
-				.then( data => {
-					console.log( data );
-					this.setState({
-						busy: false,
-						data: data
-					});
-				});
+		if ( this.state.page > 1 ) {
+			this.request( this.state.page - 1, this.state.value );
+		}
+	}
+
+	pageNext( event ) {
+		console.log( 'Next' );
+		event.preventDefault();
+
+		if ( this.state.page < this.state.pages ) {
+			this.request( this.state.page + 1, this.state.value );
 		}
 	}
 
@@ -51,9 +80,17 @@ class Search extends React.Component {
 					{ this.state.data && this.state.data.Response === 'False' && <div className='search-message'>{this.state.data.Error}</div> }
 
 					{ this.state.data && this.state.data.Response === 'True' && <ResultList data={ this.state.data.Search }/> }
-					{ this.state.data && this.state.data.Response === 'True' && <Pagination/> }
 
-					{/*{ this.state.data && <pre>{JSON.stringify( this.state.data, null, 2 )}</pre> }*/}
+					{ this.state.data && this.state.data.Response === 'True' &&
+						<Pagination
+							onPrev={ this.pagePrev }
+							onNext={ this.pageNext }
+							page={ this.state.page }
+							items={ this.state.items }
+						/>
+					}
+
+					{ this.state.data && <pre>{JSON.stringify( this.state.data, null, 2 )}</pre> }
 				</Container>
 			</section>
 		);
