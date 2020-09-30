@@ -8,7 +8,7 @@ function ResultList ( props ) {
 			{ props.data.map( ( item, key ) => {
 				return (
 					<li className='result-item' key={'item-'+ key}>
-						<Movie title={item.Title} year={item.Year} type={item.Type} poster={item.Poster !== 'N/A' && item.Poster}/>
+						<Movie title={item.Title} year={item.Year} type={item.Type} poster={item.Poster !== 'N/A' && item.Poster} id={item.imdbID}/>
 					</li>
 				);
 			} )}

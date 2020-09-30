@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import Container from '../container/container';
 import ResultList from '../result-list/result-list';
 import Pagination from '../pagination/pagination';
@@ -8,11 +9,11 @@ class Search extends React.Component {
 	constructor( props ) {
 		super( props );
 		this.state = {
-			value: '',
+			value: props.value || '',
 			busy: false,
 			data: null,
 			items: null,
-			page: 1
+			page: props.page ? Number( props.page ) : 1
 		};
 
 		this.request = this.request.bind( this );
@@ -29,6 +30,12 @@ class Search extends React.Component {
 			fetch( 'https://www.omdbapi.com/?apikey=8b47da7b&page='+ page +'&s='+ value )
 			.then( res => res.json() )
 			.then( data => {
+				if ( value ) {
+					this.props.history.push( '/search/'+ value +'/'+ page );
+				} else {
+					this.props.history.push( '' );
+				}
+
 				this.setState({
 					busy: false,
 					data: data,
@@ -68,6 +75,12 @@ class Search extends React.Component {
 		}
 	}
 
+	componentDidMount () {
+		if ( this.state.value ) {
+			this.request( this.state.page, this.state.value );
+		}
+	}
+
 	render() {
 		return (
 			<section className='search'>
@@ -89,12 +102,10 @@ class Search extends React.Component {
 							items={ this.state.items }
 						/>
 					}
-
-					{ this.state.data && <pre>{JSON.stringify( this.state.data, null, 2 )}</pre> }
 				</Container>
 			</section>
 		);
 	}
 }
 
-export default Search;
+export default withRouter( Search );

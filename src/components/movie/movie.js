@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './movie.scss';
 
 function Movie ( props ) {
 	return (
-		<div className='movie'>
+		<Link className='movie' to={'/item/'+ props.id}>
 			{ props.poster &&
 				<div className='movie-left'>
 					<img className='movie-poster' src={ props.poster } alt=""/>
@@ -16,7 +17,7 @@ function Movie ( props ) {
 					<span className='movie-type'>{ props.type }</span>
 				</div>
 			</div>
-		</div>
+		</Link>
 	);
 }
 

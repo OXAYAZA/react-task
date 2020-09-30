@@ -1,0 +1,195 @@
+.back-btn {
+	display: inline-flex;
+	align-items: center;
+	border: none;
+	background: none;
+	color: inherit;
+	font-family: inherit;
+	font-size: 24px;
+	font-weight: 500;
+
+	&::before {
+		content: '';
+		display: inline-block;
+		width: 65px;
+		height: 22px;
+		margin-right: 20px;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-image: url('data:image/svg+xml;utf8, <svg width="68" height="24" viewBox="0 0 68 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="white" d="M0.939339 10.9393C0.353554 11.5251 0.353554 12.4749 0.939339 13.0607L10.4853 22.6066C11.0711 23.1924 12.0208 23.1924 12.6066 22.6066C13.1924 22.0208 13.1924 21.0711 12.6066 20.4853L4.12132 12L12.6066 3.51472C13.1924 2.92894 13.1924 1.97919 12.6066 1.3934C12.0208 0.807616 11.0711 0.807616 10.4853 1.3934L0.939339 10.9393ZM68 10.5L2 10.5L2 13.5L68 13.5L68 10.5Z"/></svg>');
+		transition: .15s;
+	}
+
+	&:hover {
+		cursor: pointer;
+
+		&::before {
+			margin-right: 25px;
+		}
+	}
+}
+
+.item-header {
+	position: relative;
+	z-index: 0;
+	padding: 10vh 0;
+}
+
+.item-header-bg {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	opacity: .6;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.item-section {
+	position: relative;
+	z-index: 0;
+	padding: 10vh 0;
+}
+
+.item-row {
+	margin: 0 -18px;
+}
+
+.item-column {
+	padding: 0 18px;
+
+	& + .item-column {
+		margin-top: 30px;
+	}
+}
+
+.item-poster {
+	display: inline-block;
+	max-width: 100%;
+}
+
+.item-rating {
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.item-title {
+	font-size: 25px;
+	font-weight: 700;
+}
+
+.item-meta {
+	> * + * {
+		margin-top: 10px;
+	}
+}
+
+* + .item-meta {
+	margin-top: 15px;
+}
+
+.item-meta-value {
+	font-weight: 700;
+}
+
+.item-plot {
+	line-height: 1.5;
+}
+
+* + .item-plot {
+	margin-top: 15px;
+}
+
+@media (min-width: 768px) {
+	.item-row {
+		display: flex;
+	}
+
+	.item-column + .item-column {
+		margin-top: 0;
+	}
+
+	.item-column-left {
+		flex: 0 0 28%;
+	}
+
+	.item-rating {
+		font-size: 25px;
+	}
+
+	.item-title {
+		font-size: 30px;
+	}
+}
+
+@media (min-width: 1350px) {
+	.item-header {
+		padding: 150px 0 190px;
+	}
+
+	.item-header-bg {
+		right: auto;
+		width: calc( 50% + 675px );
+	}
+
+	.item-section {
+		padding-top: 0;
+		margin-top: -40px;
+	}
+
+	.item-column-left {
+		flex: 0 0 396px;
+	}
+
+	.item-column-right {
+		padding-top: 91px;
+	}
+
+	.item-poster {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.item-rating {
+		font-size: 36px;
+
+		&:first-child {
+			margin-top: 91px;
+		}
+	}
+
+	* + .item-rating {
+		margin-top: 48px;
+	}
+
+	.item-title {
+		font-size: 48px;
+	}
+
+	.item-meta {
+		font-size: 24px;
+		margin-left: 184px;
+
+		> * + * {
+			margin-top: 30px;
+		}
+	}
+
+	* + .item-meta {
+		margin-top: 51px;
+	}
+
+	.item-plot {
+		font-size: 18px;
+		margin-left: 184px;
+	}
+
+	* + .item-plot {
+		margin-top: 51px;
+	}
+}

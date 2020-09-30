@@ -73,20 +73,20 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 The Movie Application should contain the below features:
 
-- [ ] Movies Search
+- [X] Movies Search
 	- [X] List movies coming from search result - Title, Year, Type, Poster
-	- [ ] Clicking on a particular movie will redirect you to the selected movie detail page
+	- [X] Clicking on a particular movie will redirect you to the selected movie detail page
 
-- [ ] Movie detail
-	- [ ] Show selected movie detail information - Title, Year, Type, Poster, Plot, IMDB rating, Runtime, Genre
-	- [ ] For video you can choose any trailer that you want 
-	- [ ] Navigate back to the movie list. Previous search & results should be still visible
+- [X] Movie detail
+	- [X] Show selected movie detail information - Title, Year, Type, Poster, Plot, IMDB rating, Runtime, Genre
+	- [X] Navigate back to the movie list. Previous search & results should be still visible
+	- [ ] For video you can choose any trailer that you want
 - [X] Movie Pagination
 	- [X] pagination should show movies per page, and total movie results
 
-- [ ] Pages should have proper urls and navigation should work as expected:
-	- [ ] using the back and forward button of the browser should take to the correct page
-	- [ ] reloading the current page should keep your search results
+- [X] Pages should have proper urls and navigation should work as expected:
+	- [X] using the back and forward button of the browser should take to the correct page
+	- [X] reloading the current page should keep your search results
 
 Technologies required
 	- [React](https://reactjs.org/)
@@ -97,7 +97,7 @@ You may use any 3rd party libraries which can facilitate your development.
 Optional: Extra Credit
 	- Clean code
 	- Unit tests
-	- [ ] Responsive, polished design
+	- [X] Responsive, polished design
 	- Animations
 	- Apply state management to your application. You may use any 3rd party libraries which can facilitate your development. Redux or similar
 	- [ ] Implement live search 
