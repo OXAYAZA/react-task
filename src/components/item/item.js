@@ -7,15 +7,11 @@ import './item.scss';
 class Item extends React.Component {
 	constructor( props ) {
 		super( props );
-
-		this.state = {
-			id: props.match.params.id,
-			data: null
-		};
+		this.state = { data: null };
 	}
 
 	componentDidMount () {
-		fetch( 'https://www.omdbapi.com/?apikey=8b47da7b&plot=full&i=' + this.state.id )
+		fetch( 'https://www.omdbapi.com/?apikey=8b47da7b&plot=full&i=' + this.props.match.params.id )
 			.then( res => res.json() )
 			.then( data => {
 				this.setState({ data: data });
